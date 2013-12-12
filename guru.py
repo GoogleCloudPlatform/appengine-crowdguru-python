@@ -305,7 +305,7 @@ class XmppHandler(xmpp_handlers.CommandHandler):
             message.reply(WAIT_MSG)
         else:
             # Asking a question
-            asked_question = Question(question=message.arg, asker=im_from)
+            asked_question = Question(question=message.arg, asker=im_from, suspended=False)
             asked_question.put()
 
             currently_answering = Question.get_answering(im_from)
